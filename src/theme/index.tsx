@@ -21,6 +21,18 @@ const lightOptions: ThemeOptions = {
         },
     },
     components: {
+        MuiOutlinedInput: {
+            styleOverrides: {
+                root: {
+                    '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                        border: '1px solid #0000001f',
+                    },
+                },
+                notchedOutline: {
+                    border: "1px solid #0000001f"
+                }
+            }
+        },
         MuiInput: {
             styleOverrides: {
                 root: {
@@ -48,6 +60,18 @@ const darkOptions: ThemeOptions = {
         },
     },
     components: {
+        MuiOutlinedInput: {
+            styleOverrides: {
+                root: {
+                    '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                        border: '1px solid #ffffff1f',
+                    },
+                },
+                notchedOutline: {
+                    border: '1px solid #ffffff1f',
+                }
+            }
+        },
         MuiInput: {
             styleOverrides: {
                 root: {
