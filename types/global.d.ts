@@ -7,4 +7,9 @@ declare global {
   interface ImportMetaEnv {
     VITE_NODE_ENV: string
   }
+
+  type CustomStyles = {
+    [key: string]: React.CSSProperties
+  }
+
 }

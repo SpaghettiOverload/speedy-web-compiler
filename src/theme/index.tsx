@@ -20,6 +20,17 @@ const lightOptions: ThemeOptions = {
             paper: '#fff',
         },
     },
+    components: {
+        MuiInput: {
+            styleOverrides: {
+                root: {
+                    '&&': {
+                        border: '1px solid #0000001f',
+                    },
+                },
+            },
+        },
+    },
 };
 
 const darkOptions: ThemeOptions = {
@@ -34,6 +45,17 @@ const darkOptions: ThemeOptions = {
         background: {
             default: '#192231',
             paper: '#24344d',
+        },
+    },
+    components: {
+        MuiInput: {
+            styleOverrides: {
+                root: {
+                    '&&': {
+                        border: '1px solid #ffffff1f',
+                    },
+                },
+            },
         },
     },
 };
