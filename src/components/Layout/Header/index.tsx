@@ -2,13 +2,14 @@ import { Fragment, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { AppBar, Box, Button, Fade, FormControl, InputLabel, MenuItem, Select, Typography } from "@mui/material"
 
-import { RootState } from "../../../store";
-import LimeLogo from "../../../assets/lime-logo.png";
+import { RootState } from "store";
+import LimeLogo from "assets/lime-logo.png";
+import { useUserManagement } from "hooks";
+import { APP_CONFIG } from "config";
+import { useThemeManagement } from "hooks";
+
+import { Theme } from "theme/types";
 import { StyledToolbar, styles } from "./styles";
-import { useUserManagement } from "../../../hooks";
-import { APP_CONFIG } from "../../../config";
-import { Theme, availableThemes } from "../../../theme";
-import { useThemeManagement } from "../../../hooks/use_theme_management";
 
 const Counter = () => {
 
@@ -52,7 +53,7 @@ const ThemeSelector = () => {
                 label="Theme"
                 onChange={(e) => themeManagement.changeTheme(e.target.value as Theme)}
             >
-                {Object.keys(availableThemes).map((theme) => {
+                {Object.keys(Theme).map((theme) => {
                     return <MenuItem key={theme} value={theme}>{theme}</MenuItem>
                 })}
             </Select>

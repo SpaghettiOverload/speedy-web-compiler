@@ -1,8 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux'
 
-import { RootState } from '../store'
-import { updateThemeState } from '../store/theme'
-import { Theme } from '../theme'
+import { RootState } from 'store'
+import { updateThemeState } from 'store/theme'
+import { Theme } from 'theme/types'
+
 
 export const useThemeManagement = () => {
 

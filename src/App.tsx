@@ -1,14 +1,14 @@
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { ThemeProvider } from '@emotion/react'
 import { CssBaseline } from '@mui/material'
+import { useSelector } from 'react-redux'
 
 import { AppRoutes } from './config'
 import MainContentHandler from './components/MainContentHandler'
 import { StyledAppContainer } from './components/Layout/styles'
 import Layout from './components/Layout'
-import { availableThemes } from './theme'
+import { getTheme } from './theme/utils'
 import { RootState } from './store'
-import { useSelector } from 'react-redux'
 
 function App() {
 
@@ -16,7 +16,7 @@ function App() {
   const { selectedTheme } = useSelector((state: RootState) => state.theme)
 
   return (
-    <ThemeProvider theme={availableThemes[selectedTheme]}>
+    <ThemeProvider theme={getTheme(selectedTheme)}>
       <CssBaseline />
       <StyledAppContainer>
         <Layout>
@@ -31,7 +31,7 @@ function App() {
           </Routes>
         </Layout>
       </StyledAppContainer>
-    </ThemeProvider>
+    </ ThemeProvider>
   )
 }
 

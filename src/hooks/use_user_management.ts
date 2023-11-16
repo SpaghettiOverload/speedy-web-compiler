@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux'
 
-import { initialState as initialUserState, updateUserState } from '../store/user'
+import { initialState as initialUserState, updateUserState } from 'store/user'
 import { useEffect, useState } from 'react'
-import { RootState } from '../store'
+import { RootState } from 'store'
 
 export const useUserManagement = () => {
   const dispatch = useDispatch()

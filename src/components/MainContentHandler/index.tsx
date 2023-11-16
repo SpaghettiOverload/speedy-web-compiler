@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react"
-import { Box, Button, Fade, Input } from "@mui/material"
+import { Box, Button, Fade, TextField } from "@mui/material"
 import { useSelector } from "react-redux"
 
-import { useUserManagement } from "../../hooks"
-import { RootState } from "../../store"
-import { APP_CONFIG } from "../../config"
-import { styles } from "./styles"
+import { useUserManagement } from "hooks"
+import { RootState } from "store"
+import { APP_CONFIG } from "config"
 
 const MainContentHandler = (): JSX.Element => {
     const userManagement = useUserManagement()
@@ -25,14 +24,14 @@ const MainContentHandler = (): JSX.Element => {
     return !userName && !loading ? (
         <Fade in={!loading} timeout={APP_CONFIG.DEFAUL_TIMEOUT * 2}>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                <Input
+                <TextField
                     placeholder={'John Doe'}
-                    fullWidth
-                    disableUnderline
-                    sx={styles.nameInput} onChange={(e) => userManagement.setNewUserName(e.target.value)} />
+                    value={userManagement.newUserName}
+                    onChange={(e) => userManagement.setNewUserName(e.target.value)} />
                 <Button
                     disabled={!userManagement.newUserName}
-                    variant='outlined'
+                    variant='contained'
+                    color="primary"
                     onClick={() => userManagement.handleLogIn(userManagement.newUserName)}
                 >
                     {'Log In'}

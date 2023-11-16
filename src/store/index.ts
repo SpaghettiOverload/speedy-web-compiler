@@ -4,7 +4,7 @@ import { persistReducer } from 'redux-persist'
 
 import userReducer from './user'
 import themeReducer from './theme'
-import { APP_CONFIG } from '../config'
+import { APP_CONFIG } from 'config'
 
 const rootReducer = combineReducers({
   user: userReducer,
